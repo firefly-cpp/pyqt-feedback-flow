@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pyqt-feedback-flow"
 version = "0.1.0"
-description = ""
+description = "Show feedbacks in toast-like notifications"
 authors = ["firefly-cpp <iztok@iztok-jr-fister.eu>"]
 
 [tool.poetry.dependencies]
