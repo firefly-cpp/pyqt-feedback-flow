@@ -1,7 +1,7 @@
 # pyqt-feedback-flow --- Show feedbacks in toast-like notifications
 
 ## Motivation
-This is a very simple module that was developed as an essential part of our [AST application](https://arxiv.org/pdf/2109.13334.pdf) for showing simple notifications during the cycling training sessions, in order to pass on a cyclist`s essential information, as well as information that can be submitted by a sport trainer.
+This is a very simple module that was developed as a part of our [AST application](https://arxiv.org/pdf/2109.13334.pdf) for showing simple notifications during the cycling training sessions, in order to pass on a cyclist`s essential information, as well as information that can be submitted by a sport trainer.
 
 This software allows us to show notification in the realm of a text or a picture. It was shown that flowing feedback is
 more appropriate for a cyclist than static notification or pop up windows. It was tailored to our project, but the project can easily be adjusted for particular special needs. It can also be integrated into existing PyQt projects very easily.
@@ -20,7 +20,7 @@ Install this software with pip3:
 pip3 install pyqt-feedback-flow
 ```
 
-## Licence
+## License
 
 This package is distributed under the MIT License. This license can be found online at <http://www.opensource.org/licenses/MIT>.
 

@@ -13,13 +13,12 @@ class Feedback(QWidget):
         self.setWindowFlags(Qt.FramelessWindowHint |
                             Qt.WindowStaysOnTopHint | Qt.X11BypassWindowManagerHint)
 
-        self.setMinimumWidth(220)
-        self.setMinimumHeight(70)
-
         layout = QVBoxLayout(self)
 
         # show text
         if self.text is not None:
+            self.setMinimumWidth(220)
+            self.setMinimumHeight(70)
             self.label = QLabel(self)
             layout.addWidget(self.label)
             self.label.setStyleSheet(
@@ -29,12 +28,16 @@ class Feedback(QWidget):
 
         # show image
         if self.img is not None:
+            self.setMinimumWidth(100)
+            self.setMinimumHeight(100)
             self.label = QLabel(self)
             layout.addWidget(self.label)
             pixmap = QPixmap(self.img)
-            self.label.setPixmap(pixmap)
+            pixmap2 = pixmap.scaledToWidth(100)
+            #pixmap3 = pixmap.scaledToHeight(64)
+            self.label.setPixmap(pixmap2)
             self.label.show()
-            self.resize(pixmap.width(), pixmap.height())
+
 
     def show(self):
         super(Feedback, self).show()

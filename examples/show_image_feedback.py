@@ -17,7 +17,7 @@ class ShowFeedback(QWidget):
         layout.addWidget(self.button1)
 
     def send_feedback(self):
-        self._feedback = Feedback(img = "icons/status_ok.png")
+        self._feedback = Feedback(img = "icons/smile.png")
         self._feedback.show()
 
 
