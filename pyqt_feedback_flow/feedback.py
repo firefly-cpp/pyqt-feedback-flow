@@ -34,7 +34,6 @@ class Feedback(QWidget):
             layout.addWidget(self.label)
             pixmap = QPixmap(self.img)
             pixmap2 = pixmap.scaledToWidth(100)
-            #pixmap3 = pixmap.scaledToHeight(64)
             self.label.setPixmap(pixmap2)
             self.label.show()
 
