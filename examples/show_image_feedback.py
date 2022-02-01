@@ -22,8 +22,13 @@ class ShowFeedback(QWidget):
         """
         Method for showing image feedback.
         """
-        self._feedback = ImageFeedback('../icons/smile.png')
-        self._feedback.show(QPoint(0, 0), QPoint(500, 500), 4000)
+        self._feedback = ImageFeedback('../icons/smile.png')  # Raster image.
+        # self._feedback = ImageFeedback('../icons/test.svg')  # Vector image.
+        
+        start = QPoint(0, 0)
+        end = QPoint(500, 500)
+        time = 4000
+        self._feedback.show(start, end, time)
 
 
 if __name__ == "__main__":

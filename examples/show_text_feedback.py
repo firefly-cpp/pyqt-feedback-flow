@@ -24,7 +24,11 @@ class ShowFeedback(QWidget):
         Method for showing image feedback.
         """
         self._feedback = TextFeedback(text='Let\'s attack on the next hill!' + emoji.emojize(':thumbs_up:'))
-        self._feedback.show(QPoint(0, 0), QPoint(500, 500), 4000)
+        
+        start = QPoint(0, 0)
+        end = QPoint(500, 500)
+        time = 4000
+        self._feedback.show(start, end, time)
 
 
 if __name__ == "__main__":
