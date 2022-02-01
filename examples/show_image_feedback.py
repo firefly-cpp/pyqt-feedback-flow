@@ -1,24 +1,29 @@
-from pyqt_feedback_flow.feedback import Feedback
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout
-from PyQt5.QtWidgets import QPushButton
+from PyQt5.QtCore import QPoint
+from PyQt5.QtWidgets import QApplication, QPushButton, QVBoxLayout, QWidget
 import sys
-import time
-import random
-import emoji
+
+from pyqt_feedback_flow.feedback import ImageFeedback
 
 
 class ShowFeedback(QWidget):
-
-    def __init__(self):
+    """
+    Class for showing feedback on screen in the form of an image toast notification.
+    """
+    def __init__(self) -> None:
+        """
+        Initialisation method for ShowFeedback class.
+        """
         super(ShowFeedback, self).__init__()
         layout = QVBoxLayout(self)
-        self.button1 = QPushButton(
-            "Get feedback: ", self, clicked=self.send_feedback)
+        self.button1 = QPushButton('Get feedback', self, clicked=self.send_feedback)
         layout.addWidget(self.button1)
 
-    def send_feedback(self):
-        self._feedback = Feedback(img = "icons/smile.png")
-        self._feedback.show()
+    def send_feedback(self) -> None:
+        """
+        Method for showing image feedback.
+        """
+        self._feedback = ImageFeedback('../icons/smile.png')
+        self._feedback.show(QPoint(0, 0), QPoint(500, 500), 4000)
 
 
 if __name__ == "__main__":
@@ -26,4 +31,3 @@ if __name__ == "__main__":
     w = ShowFeedback()
     w.show()
     sys.exit(app.exec_())
-
