@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW Home & Student X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="647" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Bahnschrift">
+		<font-face-src>
+			<font-face-name name="Bahnschrift"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="O" horiz-adv-x="645" d="M322.835 -7.33071c-49.5039,0 -93.1654,10.8346 -131,32.4961 -37.6693,21.6693 -66.8346,52.1654 -87.5039,91.8346 -20.6614,39.5039 -31,85.3307 -31,137.331l0 201.173c0,52.1654 10.3386,98 31,137.496 20.6693,39.5039 49.8346,70.1654 87.5039,91.8346 37.8346,21.6693 81.4961,32.4961 131,32.4961 49.3307,0 93,-10.8268 130.835,-32.4961 37.6614,-21.6693 67,-52.3307 87.6614,-91.8346 20.6693,-39.4961 31,-85.3307 31,-137.496l0 -201.173c0,-52 -10.3307,-97.8268 -31,-137.331 -20.6614,-39.6693 -50,-70.1654 -87.6614,-91.8346 -37.8346,-21.6614 -81.5039,-32.4961 -130.835,-32.4961zm0 98.1654c29.1654,0 55,6.66929 77.3307,19.8346 22.3386,13.1654 39.5039,31.8346 51.6693,56.1654 12.3307,24.1654 18.3307,52.1654 18.3307,84.1654l0 208c0,31.8346 -6,60 -18.3307,84.1654 -12.1654,24.3386 -29.3307,43 -51.6693,56.1654 -22.3307,13.1732 -48.1654,19.8346 -77.3307,19.8346 -29.3307,0 -55.1654,-6.66142 -77.5039,-19.8346 -22.3307,-13.1654 -39.4961,-31.8268 -51.6614,-56.1654 -12.3386,-24.1654 -18.3386,-52.3307 -18.3386,-84.1654l0 -208c0,-32 6,-60 18.3386,-84.1654 12.1654,-24.3307 29.3307,-43 51.6614,-56.1654 22.3386,-13.1654 48.1732,-19.8346 77.5039,-19.8346z"/>
+   <glyph unicode="K" horiz-adv-x="641" d="M166 311.504l313.504 398.496 122.496 0 -450.669 -547.835 14.6693 149.339zm-78.1654 398.496l99.6693 0 0 -710 -99.6693 0 0 710zm196.331 -331.165l78.6693 72.8346 269 -451.669 -122 0 -225.669 378.835z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Bahnschrift";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#373435;stroke-width:17.64}
+    .fil1 {fill:none}
+    .fil0 {fill:#059652}
+    .fnt0 {font-weight:normal;font-size:1270px;font-family:'Bahnschrift'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_223327336">
+   <text x="-13679" y="17071"  class="fil0 fnt0">OK</text>
+   <ellipse class="fil1 str0" cx="-12828" cy="16620" rx="2811" ry="1854"/>
+  </g>
+ </g>
+</svg>

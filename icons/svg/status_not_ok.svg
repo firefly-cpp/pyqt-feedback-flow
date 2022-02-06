@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW Home & Student X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="647" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Bahnschrift">
+		<font-face-src>
+			<font-face-name name="Bahnschrift"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="647" d="M281.331 710l84.8346 0 261.835 -710 -107.496 0 -196.835 572.835 -196.669 -572.835 -107.496 0 261.827 710zm-141.165 -459.496l373.504 0 0 -94.6693 -373.504 0 0 94.6693z"/>
+   <glyph unicode="L" horiz-adv-x="573" d="M87.8346 710l99.6693 0 0 -710 -99.6693 0 0 710zm49.8346 -615.331l406.331 0 0 -94.6693 -406.331 0 0 94.6693z"/>
+   <glyph unicode="I" horiz-adv-x="275" d="M187.504 0l-99.6693 0 0 710 99.6693 0 0 -710z"/>
+   <glyph unicode="F" horiz-adv-x="559" d="M87.8346 710l99.6693 0 0 -710 -99.6693 0 0 710zm48.8346 -316.496l344.331 0 0 -94.6693 -344.331 0 0 94.6693zm0 316.496l398 0 0 -94.8346 -398 0 0 94.8346z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Bahnschrift";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#373435;stroke-width:17.64}
+    .fil1 {fill:none}
+    .fil0 {fill:#ED3237}
+    .fnt0 {font-weight:normal;font-size:1270px;font-family:'Bahnschrift'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_540744800">
+   <text x="-12185" y="18023"  class="fil0 fnt0">FAIL</text>
+   <ellipse class="fil1 str0" cx="-10874" cy="17573" rx="2811" ry="1854"/>
+  </g>
+ </g>
+</svg>
