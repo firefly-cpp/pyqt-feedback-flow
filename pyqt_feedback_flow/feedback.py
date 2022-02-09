@@ -11,6 +11,8 @@ class AnimationType(Enum):
     """
     VERTICAL = 0
     HORIZONTAL = 1
+    MAIN_DIAGONAL = 2
+    ANTI_DIAGONAL = 3
 
 
 class _Feedback(QWidget):
@@ -51,6 +53,14 @@ class _Feedback(QWidget):
         elif type_of_animation == AnimationType.HORIZONTAL:
             start = QPoint(0, height // 2 - self.notification_height // 2)
             end = QPoint(width, height // 2 - self.notification_height // 2)
+        # Main diagonal animation.
+        elif type_of_animation == AnimationType.MAIN_DIAGONAL:
+            start = QPoint(width - self.notification_width, height - self.notification_height)
+            end = QPoint(0, 0)
+        # Antidiagonal animation.
+        elif type_of_animation == AnimationType.ANTI_DIAGONAL:
+            start = QPoint(0, height - self.notification_height)
+            end = QPoint(width - self.notification_width, 0)
 
         super(_Feedback, self).show()
         self.flow(start, end, time)
