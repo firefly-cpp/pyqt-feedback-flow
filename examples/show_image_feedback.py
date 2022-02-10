@@ -1,3 +1,4 @@
+from PyQt5.QtCore import QEasingCurve
 from PyQt5.QtWidgets import QApplication, QPushButton, QVBoxLayout, QWidget
 import sys
 
@@ -42,7 +43,7 @@ class ShowFeedback(QWidget):
         self._feedback = ImageFeedback('../icons/smile.png', width=icon_width, height=icon_height)
         
         time = 3000
-        self._feedback.show(type_of_animation, time)
+        self._feedback.show(type_of_animation, time, QEasingCurve.InQuad)
 
 
 if __name__ == "__main__":
