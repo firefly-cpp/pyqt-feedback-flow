@@ -1,4 +1,4 @@
-from enum import auto, Enum
+from enum import Enum
 from PyQt5.QtCore import QEasingCurve, QPoint, QPropertyAnimation, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtSvg import QSvgWidget
@@ -33,12 +33,13 @@ class _Feedback(QWidget):
         self.notification_width = width
         self.notification_height = height
             
-    def show(self, type_of_animation: int, time: int = 3000) -> None:
+    def show(self, type_of_animation: int, time: int = 3000, curve: int = QEasingCurve.OutInQuart) -> None:
         """
         Method for displaying a toast notification.\n
         Args:
             type_of_animation (int): one of the preset types of animations in AnimationType enum class
             time (int): desired time of the flow in milliseconds
+            curve (int): the type of easing curve of the animation
         """
         # Obtaining the screen size.
         screen = QApplication.primaryScreen().size()
@@ -47,12 +48,12 @@ class _Feedback(QWidget):
 
         # Vertical animation.
         if type_of_animation == AnimationType.VERTICAL:
-            start = QPoint(width // 2 - self.notification_width // 2, height)
+            start = QPoint(width // 2 - self.notification_width // 2, height - self.notification_height)
             end = QPoint(width // 2 - self.notification_width // 2, 0)
         # Horizontal animation.
         elif type_of_animation == AnimationType.HORIZONTAL:
             start = QPoint(0, height // 2 - self.notification_height // 2)
-            end = QPoint(width, height // 2 - self.notification_height // 2)
+            end = QPoint(width - self.notification_width, height // 2 - self.notification_height // 2)
         # Main diagonal animation.
         elif type_of_animation == AnimationType.MAIN_DIAGONAL:
             start = QPoint(width - self.notification_width, height - self.notification_height)
@@ -63,21 +64,22 @@ class _Feedback(QWidget):
             end = QPoint(width - self.notification_width, 0)
 
         super(_Feedback, self).show()
-        self.flow(start, end, time)
+        self.flow(start, end, time, curve)
 
-    def flow(self, start: QPoint, end: QPoint, time: int) -> None:
+    def flow(self, start: QPoint, end: QPoint, time: int, curve: int) -> None:
         """
         Method for a notification to flow from start point to end point.\n
         Args:
             start (QPoint): starting point
             end (QPoint): ending point
             time (int): desired time of the flow in milliseconds
+            curve (int): the type of easing curve of the animation
         """
         # Animation of the position of the notification.
         self.start_flow = QPropertyAnimation(self, b'pos')
         self.start_flow.setStartValue(start)
         self.start_flow.setEndValue(end)
-        self.start_flow.setEasingCurve(QEasingCurve.InQuad)
+        self.start_flow.setEasingCurve(curve)
         self.start_flow.setDuration(time)
         self.start_flow.finished.connect(self.close)
 
@@ -85,7 +87,7 @@ class _Feedback(QWidget):
         self.start_opacity = QPropertyAnimation(self, b'windowOpacity')
         self.start_opacity.setStartValue(1)
         self.start_opacity.setEndValue(0)
-        self.start_opacity.setEasingCurve(QEasingCurve.InQuad)
+        self.start_opacity.setEasingCurve(QEasingCurve.InQuint)
         self.start_opacity.setDuration(time)
 
         self.start_flow.start()
@@ -143,9 +145,11 @@ class TextFeedback(_Feedback):
         self.label = QLabel(self)
         self.layout.addWidget(self.label)
         self.label.setStyleSheet('background-color: white;\
-                                  border: 1px solid black;\
                                   font-size: 18pt;\
-                                  padding: 10px;')
+                                  padding: 20px;\
+                                  border: 1px solid black;\
+                                  border-radius: 15px;\
+                                  font-family: Bahnschrift SemiLight')
         self.label.setText(self.text)
         self.label.adjustSize()
         self.notification_width = self.label.width()
