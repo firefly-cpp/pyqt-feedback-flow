@@ -1,4 +1,4 @@
-from enum import auto, Enum
+from enum import Enum
 from PyQt5.QtCore import QEasingCurve, QPoint, QPropertyAnimation, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtSvg import QSvgWidget
