@@ -1,8 +1,9 @@
+from re import I
 from PyQt5.QtCore import QEasingCurve
-from PyQt5.QtWidgets import QApplication, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QComboBox, QMessageBox, QPushButton, QVBoxLayout, QWidget
 import sys
 
-from pyqt_feedback_flow.feedback import AnimationType, ImageFeedback
+from pyqt_feedback_flow.feedback import AnimationDirection, AnimationType, ImageFeedback
 
 
 class ShowFeedback(QWidget):
@@ -16,18 +17,18 @@ class ShowFeedback(QWidget):
         super(ShowFeedback, self).__init__()
         
         layout = QVBoxLayout(self)
+        self.combobox = QComboBox()
+        self.combobox.addItems(['Up', 'Down', 'Left', 'Right'])
+        layout.addWidget(self.combobox)
         self.button1 = QPushButton('Get vertical feedback', self)
         self.button1.clicked.connect(lambda: self.send_feedback(AnimationType.VERTICAL))
         layout.addWidget(self.button1)
-
         self.button2 = QPushButton('Get horizontal feedback', self)
         self.button2.clicked.connect(lambda: self.send_feedback(AnimationType.HORIZONTAL))
         layout.addWidget(self.button2)
-
         self.button3 = QPushButton('Get diagonal feedback', self)
         self.button3.clicked.connect(lambda: self.send_feedback(AnimationType.MAIN_DIAGONAL))
         layout.addWidget(self.button3)
-
         self.button4 = QPushButton('Get antidiagonal feedback', self)
         self.button4.clicked.connect(lambda: self.send_feedback(AnimationType.ANTI_DIAGONAL))
         layout.addWidget(self.button4)
@@ -41,9 +42,28 @@ class ShowFeedback(QWidget):
         icon_width = 100
         icon_height = 100
         self._feedback = ImageFeedback('../icons/svg/smile.svg', width=icon_width, height=icon_height)
-        
         time = 3000
-        self._feedback.show(type_of_animation, time, QEasingCurve.InQuad)
+        
+        # Getting animation direction.
+        if self.combobox.currentText() == 'Up':
+            animation_direction = AnimationDirection.UP
+        elif self.combobox.currentText() == 'Down':
+            animation_direction = AnimationDirection.DOWN
+        elif self.combobox.currentText() == 'Left':
+            animation_direction = AnimationDirection.LEFT
+        elif self.combobox.currentText() == 'Right':
+            animation_direction = AnimationDirection.RIGHT
+        else:
+            raise Exception('Wrong direction selected')
+
+        try:
+            self._feedback.show(type_of_animation, animation_direction, time, QEasingCurve.InQuad)
+        except Exception as e:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setWindowTitle('Error')
+            msg.setText(str(e))
+            msg.exec_()
 
 
 if __name__ == "__main__":

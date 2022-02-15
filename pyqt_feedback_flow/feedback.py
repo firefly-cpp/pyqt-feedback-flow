@@ -1,4 +1,5 @@
 from enum import Enum
+from turtle import down
 from PyQt5.QtCore import QEasingCurve, QPoint, QPropertyAnimation, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtSvg import QSvgWidget
@@ -7,12 +8,22 @@ from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
 
 class AnimationType(Enum):
     """
-    Enumeration class for the type of animation. 
+    Enumeration class for the type of the animation. 
     """
     VERTICAL = 0
     HORIZONTAL = 1
     MAIN_DIAGONAL = 2
     ANTI_DIAGONAL = 3
+
+
+class AnimationDirection(Enum):
+    """
+    Enumeration class for the direction of the animation.
+    """
+    UP = 0
+    DOWN = 1
+    LEFT = 2
+    RIGHT = 3
 
 
 class _Feedback(QWidget):
@@ -33,11 +44,12 @@ class _Feedback(QWidget):
         self.notification_width = width
         self.notification_height = height
             
-    def show(self, type_of_animation: int, time: int = 3000, curve: int = QEasingCurve.OutInQuart) -> None:
+    def show(self, type_of_animation: int, animation_direction: int, time: int = 3000, curve: int = QEasingCurve.OutInQuart) -> None:
         """
         Method for displaying a toast notification.\n
         Args:
             type_of_animation (int): one of the preset types of animations in AnimationType enum class
+            animation_direction (int): one of the preset directions of animations in AnimationDirection enum class
             time (int): desired time of the flow in milliseconds
             curve (int): the type of easing curve of the animation
         """
@@ -48,20 +60,44 @@ class _Feedback(QWidget):
 
         # Vertical animation.
         if type_of_animation == AnimationType.VERTICAL:
-            start = QPoint(width // 2 - self.notification_width // 2, height - self.notification_height)
-            end = QPoint(width // 2 - self.notification_width // 2, 0)
+            if animation_direction == AnimationDirection.UP:
+                start = QPoint(width // 2 - self.notification_width // 2, height - self.notification_height)
+                end = QPoint(width // 2 - self.notification_width // 2, 0)
+            elif animation_direction == AnimationDirection.DOWN:
+                start = QPoint(width // 2 - self.notification_width // 2, 0)
+                end = QPoint(width // 2 - self.notification_width // 2, height - self.notification_height)
+            else:
+                raise Exception('Incorrect combination of animation type and direction.')
         # Horizontal animation.
         elif type_of_animation == AnimationType.HORIZONTAL:
-            start = QPoint(0, height // 2 - self.notification_height // 2)
-            end = QPoint(width - self.notification_width, height // 2 - self.notification_height // 2)
+            if animation_direction == AnimationDirection.LEFT:
+                start = QPoint(width - self.notification_width, height // 2 - self.notification_height // 2)
+                end = QPoint(0, height // 2 - self.notification_height // 2)
+            elif animation_direction == AnimationDirection.RIGHT:
+                start = QPoint(0, height // 2 - self.notification_height // 2)
+                end = QPoint(width - self.notification_width, height // 2 - self.notification_height // 2)
+            else:
+                raise Exception('Incorrect combination of animation type and direction.')
         # Main diagonal animation.
         elif type_of_animation == AnimationType.MAIN_DIAGONAL:
-            start = QPoint(width - self.notification_width, height - self.notification_height)
-            end = QPoint(0, 0)
+            if animation_direction == AnimationDirection.LEFT or animation_direction == AnimationDirection.UP:
+                start = QPoint(width - self.notification_width, height - self.notification_height)
+                end = QPoint(0, 0)
+            elif animation_direction == AnimationDirection.RIGHT or animation_direction == AnimationDirection.DOWN:
+                start = QPoint(0, 0)
+                end = QPoint(width - self.notification_width, height - self.notification_height)
+            else:
+                raise Exception('Incorrect combination of animation type and direction.')
         # Antidiagonal animation.
         elif type_of_animation == AnimationType.ANTI_DIAGONAL:
-            start = QPoint(0, height - self.notification_height)
-            end = QPoint(width - self.notification_width, 0)
+            if animation_direction == AnimationDirection.RIGHT or animation_direction == AnimationDirection.UP:
+                start = QPoint(0, height - self.notification_height)
+                end = QPoint(width - self.notification_width, 0)
+            elif animation_direction == AnimationDirection.LEFT or animation_direction == AnimationDirection.DOWN:
+                start = QPoint(width - self.notification_width, 0)
+                end = QPoint(0, height - self.notification_height)
+            else:
+                raise Exception('Incorrect combination of animation type and direction.')
 
         super(_Feedback, self).show()
         self.flow(start, end, time, curve)
@@ -136,9 +172,9 @@ class TextFeedback(_Feedback):
     """
     def __init__(self, text: str) -> None:
         """
-        Initialisation method for ImageFeedback class.\n
+        Initialisation method for TextFeedback class.\n
         Args:
-            img (str): path to the image
+            text (str): text to be displayed
         """
         super(TextFeedback, self).__init__()
         self.text = text
