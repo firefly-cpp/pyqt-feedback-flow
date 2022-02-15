@@ -1,8 +1,8 @@
 import emoji
-from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QComboBox, QLineEdit, QMessageBox, QPushButton, QWidget, QVBoxLayout
 import sys
 
-from pyqt_feedback_flow.feedback import AnimationType, TextFeedback
+from pyqt_feedback_flow.feedback import AnimationDirection, AnimationType, TextFeedback
 
 
 class ShowFeedback(QWidget):
@@ -16,7 +16,10 @@ class ShowFeedback(QWidget):
         super(ShowFeedback, self).__init__()
         
         layout = QVBoxLayout(self)
-        self.textbox = QLineEdit('Let\'s attack on the next hill!' + emoji.emojize(':thumbs_up:'))
+        self.combobox = QComboBox()
+        self.combobox.addItems(['Up', 'Down', 'Left', 'Right'])
+        layout.addWidget(self.combobox)
+        self.textbox = QLineEdit('Let\'s attack on the next hill! ' + emoji.emojize(':thumbs_up:'))
         layout.addWidget(self.textbox)
         self.button1 = QPushButton('Get vertical feedback', self)
         self.button1.clicked.connect(lambda: self.send_feedback(AnimationType.VERTICAL))
@@ -40,7 +43,27 @@ class ShowFeedback(QWidget):
         text = self.textbox.text()
         self._feedback = TextFeedback(text)
         time = 3000
-        self._feedback.show(type_of_animation, time)
+
+        # Getting animation direction.
+        if self.combobox.currentText() == 'Up':
+            animation_direction = AnimationDirection.UP
+        elif self.combobox.currentText() == 'Down':
+            animation_direction = AnimationDirection.DOWN
+        elif self.combobox.currentText() == 'Left':
+            animation_direction = AnimationDirection.LEFT
+        elif self.combobox.currentText() == 'Right':
+            animation_direction = AnimationDirection.RIGHT
+        else:
+            raise Exception('Wrong direction selected')
+
+        try:
+            self._feedback.show(type_of_animation, animation_direction, time)
+        except Exception as e:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setWindowTitle('Error')
+            msg.setText(str(e))
+            msg.exec_()
 
 
 if __name__ == "__main__":
