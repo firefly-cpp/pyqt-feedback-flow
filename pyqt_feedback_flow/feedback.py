@@ -1,5 +1,4 @@
 from enum import Enum
-from turtle import down
 from PyQt5.QtCore import QEasingCurve, QPoint, QPropertyAnimation, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtSvg import QSvgWidget
@@ -8,7 +7,7 @@ from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
 
 class AnimationType(Enum):
     """
-    Enumeration class for the type of the animation. 
+    Enumeration class for the type of the animation.
     """
     VERTICAL = 0
     HORIZONTAL = 1
@@ -38,18 +37,27 @@ class _Feedback(QWidget):
             height (int): height of the notification
         """
         super(_Feedback, self).__init__()
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.X11BypassWindowManagerHint)
+        self.setWindowFlags(Qt.FramelessWindowHint |
+                            Qt.WindowStaysOnTopHint |
+                            Qt.X11BypassWindowManagerHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.layout = QVBoxLayout(self)
         self.notification_width = width
         self.notification_height = height
-            
-    def show(self, type_of_animation: int, animation_direction: int, time: int = 3000, curve: int = QEasingCurve.OutInQuart) -> None:
+
+    def show(self,
+             type_of_animation: int,
+             animation_direction: int,
+             time: int = 3000,
+             curve: int = QEasingCurve.OutInQuart) -> None:
         """
         Method for displaying a toast notification.\n
         Args:
-            type_of_animation (int): one of the preset types of animations in AnimationType enum class
-            animation_direction (int): one of the preset directions of animations in AnimationDirection enum class
+            type_of_animation (int): one of the preset types of animations
+                                     in AnimationType enum class
+            animation_direction (int): one of the preset directions of
+                                       animations in AnimationDirection
+                                       enum class
             time (int): desired time of the flow in milliseconds
             curve (int): the type of easing curve of the animation
         """
@@ -61,45 +69,60 @@ class _Feedback(QWidget):
         # Vertical animation.
         if type_of_animation == AnimationType.VERTICAL:
             if animation_direction == AnimationDirection.UP:
-                start = QPoint(width // 2 - self.notification_width // 2, height - self.notification_height)
-                end = QPoint(width // 2 - self.notification_width // 2, 0)
+                start = QPoint(width // 2 - self.notification_width // 2,
+                               height - self.notification_height)
+                end = QPoint(width // 2 - self.notification_width // 2,
+                             0)
             elif animation_direction == AnimationDirection.DOWN:
-                start = QPoint(width // 2 - self.notification_width // 2, 0)
-                end = QPoint(width // 2 - self.notification_width // 2, height - self.notification_height)
+                start = QPoint(width // 2 - self.notification_width // 2,
+                               0)
+                end = QPoint(width // 2 - self.notification_width // 2,
+                             height - self.notification_height)
             else:
-                raise Exception('Incorrect combination of animation type and direction.')
+                raise Exception("""Incorrect combination of animation
+                                   type and direction.""")
         # Horizontal animation.
         elif type_of_animation == AnimationType.HORIZONTAL:
             if animation_direction == AnimationDirection.LEFT:
-                start = QPoint(width - self.notification_width, height // 2 - self.notification_height // 2)
+                start = QPoint(width - self.notification_width,
+                               height // 2 - self.notification_height // 2)
                 end = QPoint(0, height // 2 - self.notification_height // 2)
             elif animation_direction == AnimationDirection.RIGHT:
                 start = QPoint(0, height // 2 - self.notification_height // 2)
-                end = QPoint(width - self.notification_width, height // 2 - self.notification_height // 2)
+                end = QPoint(width - self.notification_width,
+                             height // 2 - self.notification_height // 2)
             else:
-                raise Exception('Incorrect combination of animation type and direction.')
+                raise Exception("""Incorrect combination of animation
+                                   type and direction.""")
         # Main diagonal animation.
         elif type_of_animation == AnimationType.MAIN_DIAGONAL:
-            if animation_direction == AnimationDirection.LEFT or animation_direction == AnimationDirection.UP:
-                start = QPoint(width - self.notification_width, height - self.notification_height)
+            if animation_direction == AnimationDirection.LEFT or \
+               animation_direction == AnimationDirection.UP:
+                start = QPoint(width - self.notification_width,
+                               height - self.notification_height)
                 end = QPoint(0, 0)
-            elif animation_direction == AnimationDirection.RIGHT or animation_direction == AnimationDirection.DOWN:
+            elif (animation_direction == AnimationDirection.RIGHT or
+                  animation_direction == AnimationDirection.DOWN):
                 start = QPoint(0, 0)
-                end = QPoint(width - self.notification_width, height - self.notification_height)
+                end = QPoint(width - self.notification_width,
+                             height - self.notification_height)
             else:
-                raise Exception('Incorrect combination of animation type and direction.')
+                raise Exception("""Incorrect combination of animation
+                                   type and direction.""")
         # Antidiagonal animation.
         elif type_of_animation == AnimationType.ANTI_DIAGONAL:
-            if animation_direction == AnimationDirection.RIGHT or animation_direction == AnimationDirection.UP:
+            if animation_direction == AnimationDirection.RIGHT or \
+               animation_direction == AnimationDirection.UP:
                 start = QPoint(0, height - self.notification_height)
                 end = QPoint(width - self.notification_width, 0)
-            elif animation_direction == AnimationDirection.LEFT or animation_direction == AnimationDirection.DOWN:
+            elif (animation_direction == AnimationDirection.LEFT or
+                  animation_direction == AnimationDirection.DOWN):
                 start = QPoint(width - self.notification_width, 0)
                 end = QPoint(0, height - self.notification_height)
             else:
-                raise Exception('Incorrect combination of animation type and direction.')
+                raise Exception("""Incorrect combination of animation
+                                   type and direction.""")
 
-        super(_Feedback, self).show()
         self.flow(start, end, time, curve)
 
     def flow(self, start: QPoint, end: QPoint, time: int, curve: int) -> None:
@@ -111,6 +134,8 @@ class _Feedback(QWidget):
             time (int): desired time of the flow in milliseconds
             curve (int): the type of easing curve of the animation
         """
+        super(_Feedback, self).show()
+
         # Animation of the position of the notification.
         self.start_flow = QPropertyAnimation(self, b'pos')
         self.start_flow.setStartValue(start)
@@ -151,14 +176,18 @@ class ImageFeedback(_Feedback):
 
         format = self.img.rsplit('.')[-1]  # Obtaining the format of the image.
 
-        # If the format of the image is SVG, the image has to be opened with QSvgWidget.
+        # If the format of the image is SVG, the
+        # image has to be opened with QSvgWidget.
         if format == 'svg':
             self.vector = QSvgWidget(self.img)
             self.vector.setFixedSize(width, height)
             self.layout.addWidget(self.vector)
         # If the image is raster, it is opened with QPixmap.
         else:
-            pixmap = QPixmap(self.img).scaled(width, height, transformMode=Qt.SmoothTransformation)
+            pixmap = QPixmap(self.img).scaled(
+                width,
+                height,
+                transformMode=Qt.SmoothTransformation)
             self.label = QLabel(self)
             self.layout.addWidget(self.label)
             self.label.setPixmap(pixmap)
