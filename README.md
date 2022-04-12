@@ -24,12 +24,20 @@ practical tests with our AST-GUI.
 
 ## Installation
 
-### pip3
+### pip
 
-Install this software with pip3:
+Install this software with pip:
 
 ```sh
-pip3 install pyqt-feedback-flow
+pip install pyqt-feedback-flow
+```
+
+### Arch Linux
+
+To install pyqt-feedback-flow on Arch Linux, please use an [AUR helper](https://wiki.archlinux.org/title/AUR_helpers):
+
+```sh
+$ yay -Syyu python-pyqt-feedback-flow
 ```
 
 ## License
