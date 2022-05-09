@@ -12,15 +12,18 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/firefly-cpp/pyqt-feedback-flow.svg)](http://isitmaintained.com/project/firefly-cpp/pyqt-feedback-flow "Percentage of issues still open")
 [![Fedora package](https://img.shields.io/fedora/v/python3-pyqt-feedback-flow?color=blue&label=Fedora%20Linux&logo=fedora)](https://src.fedoraproject.org/rpms/python-pyqt-feedback-flow)
 
-## Motivation
-This is a very simple module that was developed as a part of our [AST application](https://arxiv.org/pdf/2109.13334.pdf) for showing simple notifications during the cycling training sessions, in order to pass on a cyclist`s essential information, as well as information that can be submitted by a sport trainer.
+![Pyqt](https://user-images.githubusercontent.com/73126820/167383927-6fe17311-4e80-42fc-a0ef-1494b4c58762.png)
 
-This software allows us to show notification in the realm of a text or a picture. It was shown that flowing feedback is
-more appropriate for a cyclist than static notification or pop up windows. It was tailored to our project, but the project can easily be adjusted for particular special needs. It can also be integrated into existing PyQt projects very easily.
+## Description
+In many occasions, notifications can be a useful tool to inform a user about certain events. Sometimes, static notifications or pop up windows may provide adequate feedback, however, there are some cases where flowing notifications can be more appropriate. As an example, it was shown that for a cyclist flowing feedback is more suitable than other types of notifications.
 
-It was not intended to be released as a separate module, but it may inspire someone to provide updates
-or extensions to this module. Currently, the project is still very immature. It was just used in simple
-practical tests with our AST-GUI.
+This software allows us to show flowing notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers an extensive variety of possibilities of providing flowing feedback.
+
+## Text notification example
+https://user-images.githubusercontent.com/73126820/167379237-7c85467d-133e-42c9-91fd-7e85f2481267.mp4
+
+## Image notification example
+https://user-images.githubusercontent.com/73126820/167380818-814cc1ce-d137-4906-b5a4-84af94c46d4a.mp4
 
 ## Installation
 
