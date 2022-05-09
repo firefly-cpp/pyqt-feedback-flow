@@ -17,7 +17,7 @@
 ## Description
 In many occasions, notifications can be a useful tool to inform a user about certain events. Sometimes, static notifications or pop up windows may provide adequate feedback, however, there are some cases where flowing notifications can be more appropriate. As an example, it was shown that for a cyclist flowing feedback is more suitable than other types of notifications.
 
-This software allows us to show flowing notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers an extensive variety of possibilities.
+This software allows us to show flowing notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers an extensive variety of possibilities of providing flowing feedback.
 
 ## Text notification example
 https://user-images.githubusercontent.com/73126820/167379237-7c85467d-133e-42c9-91fd-7e85f2481267.mp4
