@@ -18,6 +18,8 @@ In a lot of occasions, notifications can be a useful tool to inform a user about
 This software allows us to show notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers a extensive variety of possibilities.
 
 ## Text notification example
+https://user-images.githubusercontent.com/73126820/167375783-70a7a1f9-2ff9-48bc-863a-74bfbc118a5f.mp4
+
 
 ## Image notification example
 
