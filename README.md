@@ -12,16 +12,18 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/firefly-cpp/pyqt-feedback-flow.svg)](http://isitmaintained.com/project/firefly-cpp/pyqt-feedback-flow "Percentage of issues still open")
 [![Fedora package](https://img.shields.io/fedora/v/python3-pyqt-feedback-flow?color=blue&label=Fedora%20Linux&logo=fedora)](https://src.fedoraproject.org/rpms/python-pyqt-feedback-flow)
 
-## Description
-In a lot of occasions, notifications can be a useful tool to inform a user about certain events. Sometimes, static notifications or pop up windows may provide adequate feedback, however, there are some cases where flowing notifications can be more appropriate. As an example, it was shown that for a cyclist flowing feedback is more suitable than other types of notifications.
+![Pyqt](https://user-images.githubusercontent.com/73126820/167383927-6fe17311-4e80-42fc-a0ef-1494b4c58762.png)
 
-This software allows us to show notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers a extensive variety of possibilities.
+## Description
+In many occasions, notifications can be a useful tool to inform a user about certain events. Sometimes, static notifications or pop up windows may provide adequate feedback, however, there are some cases where flowing notifications can be more appropriate. As an example, it was shown that for a cyclist flowing feedback is more suitable than other types of notifications.
+
+This software allows us to show flowing notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers an extensive variety of possibilities.
 
 ## Text notification example
-https://user-images.githubusercontent.com/73126820/167375783-70a7a1f9-2ff9-48bc-863a-74bfbc118a5f.mp4
-
+https://user-images.githubusercontent.com/73126820/167379237-7c85467d-133e-42c9-91fd-7e85f2481267.mp4
 
 ## Image notification example
+https://user-images.githubusercontent.com/73126820/167380818-814cc1ce-d137-4906-b5a4-84af94c46d4a.mp4
 
 ## Installation
 
