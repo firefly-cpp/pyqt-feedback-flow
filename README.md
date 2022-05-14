@@ -1,4 +1,4 @@
-# pyqt-feedback-flow --- Show feedbacks in toast-like notifications
+# pyqt-feedback-flow --- Show feedback in toast-like notifications
 
 ---
 
@@ -15,9 +15,9 @@
 ![Pyqt](https://user-images.githubusercontent.com/73126820/167383927-6fe17311-4e80-42fc-a0ef-1494b4c58762.png)
 
 ## Description
-In many occasions, notifications can be a useful tool to inform a user about certain events. Sometimes, static notifications or pop up windows may provide adequate feedback, however, there are some cases where flowing notifications can be more appropriate.
+On many occasions, notifications can be a valuable tool to inform a user about specific events. Sometimes, static notifications or pop-up windows may provide adequate feedback; however, there are some cases where flowing notifications can be more appropriate.
 
-This software allows us to show flowing notifications in the realm of a text or a picture. Both text and pictures (raster as well as vector) can be customised according to users' wishes, which offers an extensive variety of possibilities of providing flowing feedback.
+This software allows us to show flowing notifications in the realm of a text or a picture. Both text and pictures (raster and vector) can be customized according to users' wishes, which offers a wide variety of possibilities for providing flowing feedback.
 
 ## Text notification example
 https://user-images.githubusercontent.com/73126820/167379237-7c85467d-133e-42c9-91fd-7e85f2481267.mp4
