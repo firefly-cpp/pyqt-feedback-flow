@@ -35,12 +35,28 @@ Install this software with pip:
 pip install pyqt-feedback-flow
 ```
 
+### Alpine Linux
+
+To install pyqt-feedback-flow on Alpine Linux, use:
+
+```sh
+$ apk add py3-pyqt-feedback-flow
+```
+
 ### Arch Linux
 
 To install pyqt-feedback-flow on Arch Linux, please use an [AUR helper](https://wiki.archlinux.org/title/AUR_helpers):
 
 ```sh
 $ yay -Syyu python-pyqt-feedback-flow
+```
+
+### Fedora Linux
+
+To install pyqt-feedback-flow on Fedora Linux, use:
+
+```sh
+$ dnf install python3-pyqt-feedback-flow
 ```
 
 ## License
