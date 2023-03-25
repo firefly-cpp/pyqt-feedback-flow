@@ -8,9 +8,9 @@ repository = "https://github.com/firefly-cpp/pyqt-feedback-flow"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.9"
 PyQt5 = "^5.15.6"
-emoji = "^2.0.0"
+emoji = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
