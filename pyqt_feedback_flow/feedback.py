@@ -1,8 +1,9 @@
 from enum import Enum
-from PyQt5.QtCore import QEasingCurve, QPoint, QPropertyAnimation, Qt
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtSvg import QSvgWidget
-from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
+from PyQt6 import QtGui
+from PyQt6.QtCore import QEasingCurve, QPoint, QPropertyAnimation, Qt
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtSvgWidgets import QSvgWidget
+from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
 
 
 class AnimationType(Enum):
@@ -37,10 +38,10 @@ class _Feedback(QWidget):
             height (int): height of the notification
         """
         super(_Feedback, self).__init__()
-        self.setWindowFlags(Qt.FramelessWindowHint |
-                            Qt.WindowStaysOnTopHint |
-                            Qt.X11BypassWindowManagerHint)
-        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.WindowType.FramelessWindowHint |
+                            Qt.WindowType.WindowStaysOnTopHint |
+                            Qt.WindowType.X11BypassWindowManagerHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.layout = QVBoxLayout(self)
         self.notification_width = width
         self.notification_height = height
@@ -49,7 +50,7 @@ class _Feedback(QWidget):
              type_of_animation: int,
              animation_direction: int,
              time: int = 3000,
-             curve: int = QEasingCurve.OutInQuart) -> None:
+             curve: int = QEasingCurve(QEasingCurve.Type.OutInQuart)) -> None:
         """
         Method for displaying a toast notification.\n
         Args:
@@ -109,7 +110,7 @@ class _Feedback(QWidget):
             else:
                 raise Exception("""Incorrect combination of animation
                                    type and direction.""")
-        # Antidiagonal animation.
+        # Anti diagonal animation.
         elif type_of_animation == AnimationType.ANTI_DIAGONAL:
             if animation_direction == AnimationDirection.RIGHT or \
                animation_direction == AnimationDirection.UP:
@@ -148,7 +149,7 @@ class _Feedback(QWidget):
         self.start_opacity = QPropertyAnimation(self, b'windowOpacity')
         self.start_opacity.setStartValue(1)
         self.start_opacity.setEndValue(0)
-        self.start_opacity.setEasingCurve(QEasingCurve.InQuint)
+        self.start_opacity.setEasingCurve(QEasingCurve.Type.InQuint)
         self.start_opacity.setDuration(time)
 
         self.start_flow.start()
@@ -187,7 +188,7 @@ class ImageFeedback(_Feedback):
             pixmap = QPixmap(self.img).scaled(
                 width,
                 height,
-                transformMode=Qt.SmoothTransformation)
+                transformMode=Qt.ImageConversionFlag.SmoothTransformation)
             self.label = QLabel(self)
             self.layout.addWidget(self.label)
             self.label.setPixmap(pixmap)
