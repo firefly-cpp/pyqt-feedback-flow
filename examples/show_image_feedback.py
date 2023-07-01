@@ -1,5 +1,5 @@
-from PyQt5.QtCore import QEasingCurve
-from PyQt5.QtWidgets import (QApplication, QComboBox, QMessageBox,
+from PyQt6.QtCore import QEasingCurve
+from PyQt6.QtWidgets import (QApplication, QComboBox, QMessageBox,
                              QPushButton, QVBoxLayout, QWidget)
 import sys
 
@@ -17,6 +17,7 @@ class ShowFeedback(QWidget):
         Initialisation method for ShowFeedback class.
         """
         super(ShowFeedback, self).__init__()
+        self._feedback = None
         layout = QVBoxLayout(self)
         self.combobox = QComboBox()
         self.combobox.addItems(['Up', 'Down', 'Left', 'Right'])
@@ -67,17 +68,17 @@ class ShowFeedback(QWidget):
             self._feedback.show(type_of_animation,
                                 animation_direction,
                                 time,
-                                QEasingCurve.InQuad)
+                                QEasingCurve(QEasingCurve.Type.OutInQuart))
         except Exception as e:
             msg = QMessageBox()
-            msg.setIcon(QMessageBox.Critical)
+            msg.setIcon(QMessageBox.Icon.Critical)
             msg.setWindowTitle('Error')
             msg.setText(str(e))
-            msg.exec_()
+            msg.exec()
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = ShowFeedback()
     w.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
