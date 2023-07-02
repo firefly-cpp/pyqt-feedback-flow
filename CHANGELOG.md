@@ -1,12 +1,66 @@
 # Changelog
 
-## [Unreleased](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/HEAD)
+## [0.3.0](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.0) (2023-07-01)
 
-[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.1.2...HEAD)
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.2.0...0.3.0)
+
+**Merged pull requests:**
+
+- Updated to PyQt6 [\#19](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/19) ([alenrajsp](https://github.com/alenrajsp))
+
+## [0.2.0](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.2.0) (2023-03-25)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.1.6...0.2.0)
 
 **Closed issues:**
 
+- Add example for moving table [\#18](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/18)
+- Description of this project [\#16](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/16)
+- Update README [\#15](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/15)
+- Tests [\#10](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/10)
+
+## [0.1.6](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.1.6) (2022-05-14)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.1.5...0.1.6)
+
+**Merged pull requests:**
+
+- Improved README [\#17](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/17) ([luckyLukac](https://github.com/luckyLukac))
+
+## [0.1.5](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.1.5) (2022-03-09)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.1.4...0.1.5)
+
+**Closed issues:**
+
+- Fix flake issues [\#13](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/13)
+
+**Merged pull requests:**
+
+- Refactored code according to Flake [\#14](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/14) ([luckyLukac](https://github.com/luckyLukac))
+
+## [0.1.4](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.1.4) (2022-02-16)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.1.3...0.1.4)
+
+**Merged pull requests:**
+
+- Implementation of animation directions [\#12](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/12) ([luckyLukac](https://github.com/luckyLukac))
+- Animations improvements [\#11](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/11) ([luckyLukac](https://github.com/luckyLukac))
+
+## [0.1.3](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.1.3) (2022-02-09)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.1.2...0.1.3)
+
+**Closed issues:**
+
+- Provide icons in SVG format [\#5](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/5)
 - Build failed on clean chroot [\#4](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/4)
+
+**Merged pull requests:**
+
+- Improved animations [\#9](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/9) ([luckyLukac](https://github.com/luckyLukac))
+- Different types of animations supported [\#8](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/8) ([luckyLukac](https://github.com/luckyLukac))
 
 ## [0.1.2](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.1.2) (2022-02-01)
 
