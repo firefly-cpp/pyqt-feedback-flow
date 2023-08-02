@@ -6,6 +6,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyqt-feedback-flow.svg)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pyqt-feedback-flow.svg)
 [![Downloads](https://pepy.tech/badge/pyqt-feedback-flow)](https://pepy.tech/project/pyqt-feedback-flow)
+![GitHub repo size](https://img.shields.io/github/repo-size/firefly-cpp/pyqt-feedback-flow?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/firefly-cpp/pyqt-feedback-flow.svg)](https://github.com/firefly-cpp/pyqt-feedback-flow/blob/master/LICENSE)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/firefly-cpp/pyqt-feedback-flow.svg)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/firefly-cpp/pyqt-feedback-flow.svg)](http://isitmaintained.com/project/firefly-cpp/pyqt-feedback-flow "Average time to resolve an issue")
