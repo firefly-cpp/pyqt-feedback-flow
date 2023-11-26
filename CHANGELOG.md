@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.1](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.1) (2023-11-26)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.3.0...0.3.1)
+
+**Closed issues:**
+
+- Update about of the repo [\#20](https://github.com/firefly-cpp/pyqt-feedback-flow/issues/20)
+
+**Merged pull requests:**
+
+- Contribution guide [\#21](https://github.com/firefly-cpp/pyqt-feedback-flow/pull/21) ([lahovniktadej](https://github.com/lahovniktadej))
+
 ## [0.3.0](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.0) (2023-07-01)
 
 [Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.2.0...0.3.0)
