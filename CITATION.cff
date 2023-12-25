@@ -1,0 +1,17 @@
+abstract: '<p><strong>Full Changelog</strong>: https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.3.1...0.3.2</p>'
+authors:
+- family-names: Fister Jr.
+  given-names: Iztok
+  orcid: 0000-0002-6418-1272
+- family-names: "Luka\u010D"
+  given-names: Luka
+  orcid: 0000-0003-4691-5401
+cff-version: 1.2.0
+date-released: '2023-12-25'
+doi: 10.5281/zenodo.10431480
+license:
+- MIT
+repository-code: https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.2
+title: 'firefly-cpp/pyqt-feedback-flow: 0.3.2'
+type: software
+version: 0.3.2

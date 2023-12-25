@@ -13,6 +13,7 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/firefly-cpp/pyqt-feedback-flow.svg)](http://isitmaintained.com/project/firefly-cpp/pyqt-feedback-flow "Percentage of issues still open")
 [![Fedora package](https://img.shields.io/fedora/v/python3-pyqt-feedback-flow?color=blue&label=Fedora%20Linux&logo=fedora)](https://src.fedoraproject.org/rpms/python-pyqt-feedback-flow)
 [![Packaging status](https://repology.org/badge/tiny-repos/python:pyqt-feedback-flow.svg)](https://repology.org/project/python:pyqt-feedback-flow/versions)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10431480.svg)](https://doi.org/10.5281/zenodo.10431480)
 
 ![Pyqt](https://user-images.githubusercontent.com/73126820/167383927-6fe17311-4e80-42fc-a0ef-1494b4c58762.png)
 

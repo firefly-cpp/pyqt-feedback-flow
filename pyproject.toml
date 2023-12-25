@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyqt-feedback-flow"
-version = "0.3.1"
+version = "0.3.3"
 description = "Show feedback in toast-like notifications"
 authors = ["Iztok Fister Jr. <iztok@iztok-jr-fister.eu>", "Luka Lukač <luka.lukac@student.um.si>"]
 keywords = ['notifications', 'toast', 'pyqt6']
