@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.3](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.3) (2023-12-26)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.3.2...0.3.3)
+
+## [0.3.2](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.2) (2023-12-24)
+
+[Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.3.1...0.3.2)
+
 ## [0.3.1](https://github.com/firefly-cpp/pyqt-feedback-flow/tree/0.3.1) (2023-11-26)
 
 [Full Changelog](https://github.com/firefly-cpp/pyqt-feedback-flow/compare/0.3.0...0.3.1)
