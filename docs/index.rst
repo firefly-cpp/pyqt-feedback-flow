@@ -38,6 +38,14 @@ The documentation is organized into the following sections:
    dev/installation
    dev/documentation
 
+.. _pyqt-feedback-flow:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: pyqt-feedback-flow
+
+   pyqt-feedback-flow/index
+
 .. _about:
 
 .. toctree::
