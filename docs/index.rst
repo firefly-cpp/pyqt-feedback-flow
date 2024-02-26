@@ -29,6 +29,15 @@ The documentation is organized into the following sections:
 
    user/usage
 
+.. _dev:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Developer documentation
+
+   dev/installation
+   dev/documentation
+
 .. _about:
 
 .. toctree::
