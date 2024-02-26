@@ -19,6 +19,7 @@ Documentation
 The documentation is organized into the following sections:
 
 * :ref:`user`
+* :ref:`about`
 
 .. _user:
 
@@ -27,3 +28,12 @@ The documentation is organized into the following sections:
    :caption: User documentation
 
    user/usage
+
+.. _about:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: About
+
+   about/license
+   about/code_of_conduct
