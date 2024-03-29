@@ -48,7 +48,7 @@ All of the project's dependencies should be installed and the project ready for 
 
 | Package              | Version | Platform |
 |----------------------|:-------:|:--------:|
-| sphinx               | ^4.4.0  |   Any    |
+| sphinx               | ^5.0    |   Any    |
 | sphinx-rtd-theme     | ^1.0.0  |   Any    |
 
 ## Development Tasks
