@@ -1,12 +1,18 @@
 [tool.poetry]
 name = "pyqt-feedback-flow"
-version = "0.3.3"
+version = "0.3.4"
 description = "Show feedback in toast-like notifications"
 authors = ["Iztok Fister Jr. <iztok@iztok-jr-fister.eu>", "Luka Lukač <luka.lukac@student.um.si>"]
-keywords = ['notifications', 'toast', 'pyqt6']
+keywords = ['feedback', 'notifications', 'toast', 'pyqt6']
 homepage = "https://github.com/firefly-cpp/pyqt-feedback-flow"
 repository = "https://github.com/firefly-cpp/pyqt-feedback-flow"
 readme = "README.md"
+
+include = [
+    { path="LICENSE", format="sdist" },
+    { path="CHANGELOG.md", format="sdist" },
+    { path="CITATION.cff", format="sdist" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
