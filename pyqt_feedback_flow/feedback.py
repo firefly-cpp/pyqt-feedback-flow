@@ -8,7 +8,11 @@ from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
 
 class AnimationType(Enum):
     """
-    Enumeration class for the type of the animation.
+    Enumeration class for the type of the animation.\n
+    - VERTICAL\n
+    - HORIZONTAL\n
+    - MAIN_DIAGONAL\n
+    - ANTI_DIAGONAL\n
     """
     VERTICAL = 0
     HORIZONTAL = 1
@@ -18,7 +22,11 @@ class AnimationType(Enum):
 
 class AnimationDirection(Enum):
     """
-    Enumeration class for the direction of the animation.
+    Enumeration class for the direction of the animation.\n
+    - UP\n
+    - DOWN\n
+    - LEFT\n
+    - RIGHT\n
     """
     UP = 0
     DOWN = 1
@@ -54,11 +62,10 @@ class _Feedback(QWidget):
         """
         Method for displaying a toast notification.\n
         Args:
-            type_of_animation (int): one of the preset types of animations
-                                     in AnimationType enum class
-            animation_direction (int): one of the preset directions of
-                                       animations in AnimationDirection
-                                       enum class
+            type_of_animation (int):
+                one of the preset types of animations in AnimationType enum class
+            animation_direction (int):
+                one of the preset directions of animations in AnimationDirection enum class
             time (int): desired time of the flow in milliseconds
             curve (int): the type of easing curve of the animation
         """
@@ -80,8 +87,7 @@ class _Feedback(QWidget):
                 end = QPoint(width // 2 - self.notification_width // 2,
                              height - self.notification_height)
             else:
-                raise Exception("""Incorrect combination of animation
-                                   type and direction.""")
+                raise Exception("""Incorrect combination of animation type and direction.""")
         # Horizontal animation.
         elif type_of_animation == AnimationType.HORIZONTAL:
             if animation_direction == AnimationDirection.LEFT:
@@ -93,8 +99,7 @@ class _Feedback(QWidget):
                 end = QPoint(width - self.notification_width,
                              height // 2 - self.notification_height // 2)
             else:
-                raise Exception("""Incorrect combination of animation
-                                   type and direction.""")
+                raise Exception("""Incorrect combination of animation type and direction.""")
         # Main diagonal animation.
         elif type_of_animation == AnimationType.MAIN_DIAGONAL:
             if animation_direction == AnimationDirection.LEFT or \
@@ -108,8 +113,7 @@ class _Feedback(QWidget):
                 end = QPoint(width - self.notification_width,
                              height - self.notification_height)
             else:
-                raise Exception("""Incorrect combination of animation
-                                   type and direction.""")
+                raise Exception("""Incorrect combination of animation type and direction.""")
         # Anti diagonal animation.
         elif type_of_animation == AnimationType.ANTI_DIAGONAL:
             if animation_direction == AnimationDirection.RIGHT or \
@@ -121,8 +125,7 @@ class _Feedback(QWidget):
                 start = QPoint(width - self.notification_width, 0)
                 end = QPoint(0, height - self.notification_height)
             else:
-                raise Exception("""Incorrect combination of animation
-                                   type and direction.""")
+                raise Exception("""Incorrect combination of animation type and direction.""")
 
         self.flow(start, end, time, curve)
 
@@ -130,8 +133,8 @@ class _Feedback(QWidget):
         """
         Method for a notification to flow from start point to end point.\n
         Args:
-            start (QPoint): starting point
-            end (QPoint): ending point
+            start (QPoint): start point location
+            end (QPoint): end point location
             time (int): desired time of the flow in milliseconds
             curve (int): the type of easing curve of the animation
         """
@@ -160,7 +163,7 @@ class ImageFeedback(_Feedback):
     """
     Class for giving image feedback in the form of toast notifications.\n
     Args:
-        img (str): path to the image
+        img (str): path to the image with correct extension
         width (int): width of the image
         height (int): height of the image
     """
@@ -168,7 +171,7 @@ class ImageFeedback(_Feedback):
         """
         Initialisation method for ImageFeedback class.\n
         Args:
-            img (str): path to the image
+            img (str): path to the image with correct extension
             width (int): width of the image
             height (int): height of the image
         """
