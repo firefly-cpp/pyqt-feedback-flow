@@ -10,13 +10,15 @@ def widget(qtbot):
     text = "Test Notification"
     feedback = TextFeedback(text)
     qtbot.addWidget(feedback)
+    return feedback
 
 def test_text_feedback_creation(qtbot,widget):
     """
     Test that a TextFeedback instance is created with the correct text and dimensions.
     """
-    assert widget.text == "Test Notification"
-    assert widget.label.text() == "Test Notification"
+    text = "Test Notification"
+    assert widget.text == text
+    assert widget.label.text() == text
     assert widget.notification_width > 0
     assert widget.notification_height > 0
 

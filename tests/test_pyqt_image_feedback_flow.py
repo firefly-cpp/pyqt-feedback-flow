@@ -10,6 +10,7 @@ def widget(qtbot,tmp_path):
 
     feedback = ImageFeedback(str(svg_path), 100, 100)
     qtbot.addWidget(feedback)
+    return feedback
 
 
 def test_image_feedback_creation_svg(qtbot,widget):
