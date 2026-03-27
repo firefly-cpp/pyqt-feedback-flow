@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'pyqt-feedback-flow'
-copyright = '2022-2024, Iztok Fister Jr., Luka Lukač'
+copyright = '2022-2026, Iztok Fister Jr., Luka Lukač'
 author = 'Iztok Fister Jr., Luka Lukač'
 
 # The full version, including alpha/beta/rc tags
-release = '0.3.5'
+release = '0.3.6'
 
 
 # -- General configuration ---------------------------------------------------
